@@ -1,0 +1,33 @@
+// *************************************************************
+// 第二次上課> homework_4
+// *************************************************************
+// 請寫出一個function 參數是字串
+// 而且只有二種字元 "("  和  ")"
+// 每一個"(" 和  ")" 可以湊成一堆括號 
+// 則回傳 true 否則 回傳 false
+// ex 
+// test("(")//
+// test( "()" ) => returns true 
+// test( ")(()))" ) => returns false 
+// test( "(" ) => returns false 
+// test( "(())((()())())" ) => returns true 
+// -------------------------------------------------------------
+// to-do: 取字元str.charAt(index) or str[index]
+// to-do: stack結構: 遇到"("就push, 遇到")"就pop進行配對, 當無法配對時, 回傳false
+// to-do: str結尾, 若stack還有個數, 亦回傳false
+// -------------------------------------------------------------
+var test="(((()))";
+var isPair=function (str) {
+	var i=0, stack=[], flag;
+	while (i<str.length){
+		if (str[i]==='('){
+			stack.push(str[i]);
+		} else if (str[i]===')'){
+			(stack.pop()==='(')? flag=true :flag=false;
+		}
+		i++;
+	}
+	if (stack.length!==0) {flag=false};
+	return flag;
+}
+isPair(test);
