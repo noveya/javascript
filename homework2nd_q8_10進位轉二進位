@@ -21,7 +21,6 @@ var tran10to2 = function (x, y){
 	ten2two(x,y);
 	function ten2two(x,y) {
 		if (x>=y) ten2two(parseInt(x/y),y);
-		// console.log(x%y);
 		stack.push(x%y);
 	}
 	result=stack.join('');
