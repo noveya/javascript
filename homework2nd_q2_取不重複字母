@@ -1,0 +1,24 @@
+// *************************************************************
+// 第二次上課> homework_2
+// *************************************************************
+// 寫一個function 參數是字串，回傳是陣列
+// 當出現 連續n個一樣的 字元時，只把回傳一個到陣列中
+// ex
+// f("tttttttgggh")//return [t,g,h]
+// f("HHHQQqQGG")//return [H,Q,q,Q,G]
+// -------------------------------------------------------------
+// to-do: 擷取字元, curr=pre時, skip, 否則就放到[]
+// to-do: 每次擷取, 更新pre
+// -------------------------------------------------------------
+var input="tttttttgggh";
+var aryLetter=function (str) {
+	var ary=[], pre;
+	for (var i=0; i<str.length; i++){
+		if (str[i]!==pre) {
+			ary.push(str[i]);
+		}
+		pre=str[i];
+	}
+	return ary;
+}
+aryLetter(input);
